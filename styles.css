@@ -1,7 +1,17 @@
+@import url("https://unpkg.com/papercss@1.9.2/dist/paper.css") layer(csspaper);
+
+.card-list:has(li:hover) li:not(:hover) {
+  filter: blur(4px)
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #242424;
+
+  min-height: 100vh;
+  background-size: 20px 20px;
+  background-image:  repeating-linear-gradient(0deg, #50505031, #242424 1px, #242424 1px, #242424);
 }
 
 hr {
@@ -11,7 +21,8 @@ hr {
 
 /* TODO: NAVBAR */
 .navbar {
-  background-color: #333;
+  /* background-color: #333; */
+  background-color: rgb(26, 25, 32);
   color: #fff;
   padding: 15px 15px;
   box-shadow: 0 2px 4px rgba(28, 24, 44, 0.1); /* Ajusta los valores según prefieras */
@@ -24,10 +35,19 @@ hr {
   align-items: center;
 }
 
-.logo {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.5rem;
+.container img {
+  width: 40px;
+  transition: all 0.3s ease; /* Transición suave para las propiedades animadas */
+}
+
+.container img:hover {
+  transform: scale(1.08);
+  filter: saturate(190%);
+  cursor: pointer;
+  -webkit-transform: scale(1.08);
+  -moz-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  -o-transform: scale(1.08);
 }
 
 .menu {
@@ -41,12 +61,33 @@ hr {
 }
 
 .menu li a {
-  color: #fff;
+  position: relative;
   text-decoration: none;
+  color: #e9e9e9;
+  transition: color 0.3s ease;
 }
 
 .menu li a:hover {
   color: rgb(191, 115, 221);
+}
+
+.menu li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(191, 115, 221);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease, margin-bottom 0.3s ease; /* Agregado */
+  margin-bottom: -6px; /* Agregado */
+}
+
+.menu li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .hamburger-menu {
@@ -62,20 +103,22 @@ hr {
   margin: 3px 0;
 }
 
+/* FIXME: NAVBAR RESPONSIVE */
 @media screen and (max-width: 768px) {
   .menu {
     display: none;
+    text-align: center;
   }
-
+  
   .hamburger-menu {
     display: flex;
   }
-
+  
   .container {
     justify-content: space-between;
     align-items: center;
   }
-
+  
   .menu.active {
     display: flex;
     flex-direction: column;
@@ -101,7 +144,6 @@ hr {
   align-items: center;
   justify-content: center;
   padding: 30px;
-  text-align: justify;
   color: #ccc;
 }
 
@@ -127,4 +169,60 @@ hr {
 .button:hover {
   background-color: rgb(102, 0, 128);
   color: #ffffff;
+}
+
+/* TODO: PROJECTS */
+
+.container-projects {
+  padding: 0 300px 0 300px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin: 0 0 2rem;  
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+}
+
+li {
+  margin: 0;
+  transition: all 150ms ease-in-out;
+}
+
+li::before {
+  content: "";
+}
+
+img {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  margin-bottom: .6rem;
+}
+
+a {
+  background: none;
+}
+
+.paper {
+  padding: 1.5rem;
+  background-color: rgb(26, 25, 32);
+}
+
+li a {
+  padding-inline-start: 1rem;
 }
