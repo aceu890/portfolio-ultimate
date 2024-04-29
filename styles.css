@@ -1,7 +1,7 @@
 @import url("https://unpkg.com/papercss@1.9.2/dist/paper.css") layer(csspaper);
 
 .card-list:has(li:hover) li:not(:hover) {
-  filter: blur(4px)
+  filter: blur(4px);
 }
 
 body {
@@ -11,7 +11,13 @@ body {
 
   min-height: 100vh;
   background-size: 20px 20px;
-  background-image:  repeating-linear-gradient(0deg, #50505031, #242424 1px, #242424 1px, #242424);
+  background-image: repeating-linear-gradient(
+    0deg,
+    #50505031,
+    #242424 1px,
+    #242424 1px,
+    #242424
+  );
 }
 
 hr {
@@ -27,7 +33,6 @@ hr {
   padding: 15px 15px;
   box-shadow: 0 2px 4px rgba(28, 24, 44, 0.1); /* Ajusta los valores según prefieras */
 }
-
 
 .container {
   display: flex;
@@ -109,16 +114,16 @@ hr {
     display: none;
     text-align: center;
   }
-  
+
   .hamburger-menu {
     display: flex;
   }
-  
+
   .container {
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .menu.active {
     display: flex;
     flex-direction: column;
@@ -149,10 +154,21 @@ hr {
 
 .hero-card img {
   width: 400px;
+  transition: transform 0.3s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.hero-card img:hover {
+  transform: scale(1.05);
+  filter: saturate(120%) brightness(120%);
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -webkit-filter: saturate(120%) brightness(120%);
 }
 
 .button {
-  margin-right: 45px;
   background-color: purple;
   width: 100px;
   color: #e6e2e7;
@@ -172,7 +188,6 @@ hr {
 }
 
 /* TODO: PROJECTS */
-
 .container-projects {
   padding: 0 300px 0 300px;
 }
@@ -180,7 +195,7 @@ hr {
 h1 {
   font-size: 2.2rem;
   color: var(--primary-color);
-  margin: 0 0 2rem;  
+  margin: 0 0 2rem;
 }
 
 h2 {
@@ -195,7 +210,6 @@ h2 {
   margin: 0;
   padding: 0;
   cursor: pointer;
-
 }
 
 li {
@@ -211,7 +225,7 @@ img {
   display: block;
   min-width: 0;
   width: 100%;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
 a {
@@ -225,4 +239,32 @@ a {
 
 li a {
   padding-inline-start: 1rem;
+}
+
+/* FIXME: PROJECTS RESPONSIVE */
+@media screen and (max-width: 1130px) {
+  .container-projects {
+    padding: 0 15px 0 15px;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container-projects {
+    padding: 0 15px 0 15px;
+    text-align: center;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
