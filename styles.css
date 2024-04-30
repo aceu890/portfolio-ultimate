@@ -1,5 +1,9 @@
 @import url("https://unpkg.com/papercss@1.9.2/dist/paper.css") layer(csspaper);
 
+:root {
+  --dark-violet-color: rgb(26, 25, 32);
+}
+
 .card-list:has(li:hover) li:not(:hover) {
   filter: blur(4px);
 }
@@ -28,7 +32,7 @@ hr {
 /* TODO: NAVBAR */
 .navbar {
   /* background-color: #333; */
-  background-color: rgb(26, 25, 32);
+  background-color: var(--dark-violet-color);
   color: #fff;
   padding: 15px 15px;
   box-shadow: 0 2px 4px rgba(28, 24, 44, 0.1); /* Ajusta los valores según prefieras */
@@ -90,11 +94,6 @@ hr {
   margin-bottom: -6px; /* Agregado */
 }
 
-.menu li a:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
 .hamburger-menu {
   display: none;
   flex-direction: column;
@@ -114,20 +113,20 @@ hr {
     display: none;
     text-align: center;
   }
-
+  
   .hamburger-menu {
     display: flex;
   }
-
+  
   .container {
     justify-content: space-between;
     align-items: center;
   }
-
+  
   .menu.active {
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background: none;
     position: absolute;
     top: 42px;
     left: 0;
@@ -135,11 +134,19 @@ hr {
     padding: 10px;
     z-index: 1;
   }
-
+  
   .menu.active li {
+    background-color: var(--dark-violet-color);
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
     margin-right: 0;
     margin-bottom: 10px;
-  }
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
 }
 
 /* TODO: HERO-CARD */
@@ -180,6 +187,9 @@ hr {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+  display: block;
+  margin: 20px auto 0;
+  text-align: center;
 }
 
 .button:hover {
@@ -221,11 +231,15 @@ li::before {
   content: "";
 }
 
-img {
+.container-projects img {
   display: block;
   min-width: 0;
   width: 100%;
   margin-bottom: 0.6rem;
+}
+
+.container-projects img:hover {
+  filter: saturate(150%) brightness(120%);
 }
 
 a {
@@ -234,7 +248,7 @@ a {
 
 .paper {
   padding: 1.5rem;
-  background-color: rgb(26, 25, 32);
+  background-color: var(--dark-violet-color);
 }
 
 li a {
@@ -268,3 +282,49 @@ li a {
     grid-template-columns: 1fr;
   }
 }
+
+/* TODO: FOOTER */
+.dark-footer {
+  background-color: var(--dark-violet-color);
+  color: #fff;
+}
+
+.dark-footer h4 {
+  color: #fff;
+}
+
+.dark-footer .contact-info {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dark-footer .contact-info li {
+  margin-bottom: 10px;
+}
+
+.dark-footer .social-icons {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dark-footer .social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dark-footer .social-icons li:last-child {
+  margin-right: 0;
+}
+
+.dark-footer .social-icons a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.dark-footer .social-icons a:hover {
+  color: #55acee;
+}
+
+/* Añade más estilos según necesites */
+
