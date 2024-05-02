@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -15,12 +15,9 @@
     <meta name="keywords" content="Fernando, programador, desarrollador web, desarrollo mobile, videojuegos, tecnologías, AIEP" />
     <meta name="author" content="Fernando" />
     <link rel="canonical" href="https://yourwebsite.com" />
-    <link rel="shortcut icon" href="./img/logo/ico.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/img/logo-ico/ico.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-<HASH>" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles.css" />
-
-
-
+    <link rel="stylesheet" href="./css/styles.css" />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -28,12 +25,12 @@
     <!-- start navbar -->
     <nav class="navbar">
       <div class="container">
-        <img src="./img/home.png" alt="" />
+        <img src="./assets/img/home.png" alt="" />
         <ul class="menu">
           <li><a href="./index.html">Inicio</a></li>
           <li><a href="./pages/proyectos/1proyectos.html">Proyectos</a></li>
-          <li><a href="#">Acerca de</a></li>
           <li><a href="./pages/contacto.html">Contacto</a></li>
+          <li><a href="./pages/cv.html">CV</a></li>
         </ul>
         <div class="hamburger-menu" id="hamburger-menu">
           <div class="bar"></div>
@@ -46,7 +43,7 @@
 
     <!-- start Hero -->
     <div class="hero-card">
-      <div><img src="./img/logo/hero.png" alt="" /></div>
+      <div><img src="./assets/img/hero/hero.png" alt="" /></div>
       <p>
         Hola, <strong style="color: rgb(167, 79, 202)">Soy Fernando</strong>,
         Programador computacional <strong>senior</strong>.<br />Tengo
@@ -56,7 +53,7 @@
         U. <b>AIEP</b>.
       </p>
 
-      <a class="button" href="#">CV</a>
+      <a class="button" href="#" id="descargarCV"><i class="fas fa-download"></i> CV</a>
     </div>
     <!-- end Hero -->
 
@@ -139,7 +136,7 @@
           </li>
         </ul>
         <br />
-        <a href="#" class="button">Ver todos</a>
+        <a href="./pages/proyectos/1proyectos.html" class="button">Ver todos</a>
       </section>
     </div>
     <!-- end projects -->
@@ -180,6 +177,6 @@
     </footer>
     <!-- end footer -->
 
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
